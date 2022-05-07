@@ -3,37 +3,152 @@
 <html>
    <body>
      <body style="background-color:pink;">
-        <!-- (a) -->
-        <h2> Show Raw Scores</h2>
-        <form action="HW4_ShowRawScores.php" method="post">
-                SID: <input type="text" name="SID"> <br/>
+        <!-- (1) -->
+        <h2>Box Office and Runtime by Movie Age Rating</h2>
+        Click the button to display the information
+        <form action="movie_rating.php" method="post">
+            <input type="submit" value="Click">
+        </form>
+        <br/><br/>
+
+        <!-- (2) -->
+        <h2> Most Written Critic by Publisher</h2>
+        Enter a publisher's name (case insensitive):
+        <form action="most_critic.php" method="post">
+                Publisher: <input type="text" name="publisher"> <br/>
                 <input type="submit">
         </form>
         <br/><br/>
 
-        <!-- (b) -->
-        <h2> Show Percentages and Weighted Averages</h2>
-        <form action="HW4_ShowPercentages.php" method="post">
-                SID: <input type="text" name="SID"> <br/>
+        <!-- (3) -->
+        <h2> Top Domestic and International Box Office Numbers</h2>
+        Click the button to display the top 10 domestic and international box office producing movies
+        <form action="top_box.php" method="post">
+            <input type="submit" value="Click">
+        </form>
+        <br/><br/>
+
+        <!-- (4) -->
+        <h2> Average Movie Budget for a Given Actor</h2>
+        Enter an actor's name (case insensitive):
+        <form action="actor_budget.php" method="post">
+                Actor: <input type="text" name="actor"> <br/>
+                <input type="submit">
+        </form>
+
+        <!-- (5) -->
+        <h2> Lowest 'Fresh' Rated Movies</h2>
+        Click the button to display the lowest 10 'Fresh' rated movies
+        <form action="low_fresh.php" method="post">
+            <input type="submit" value="Click">
+        </form>
+        <br/><br/>
+
+        <!-- (6) -->
+        <h2> Best 'Rotten' Rated Movies</h2>
+        Click the button to display the highest 10 'Rotten' rated movies
+        <form action="high_rot.php" method="post">
+            <input type="submit" value="Click">
+        </form>
+        <br/><br/>
+
+        <!-- (7) -->
+        <h2> Worst and Best Movies by Tomatometer </h2>
+        Click either to view either the best or worst movies by Tomatometer score
+        <form action="desc_tomato.php" method="post">
+            <input type="submit" value="Worst">
+        </form>
+        <form action="asc_tomato.php" method="post">
+            <input type="submit" value="Best">
+        </form>
+        <br/><br/>
+
+        <!-- (8) -->
+        <h2> Average box office, age of actor, and age difference by year </h2>
+        Either enter a year or select the second button to view the information for all years
+        <form action="year_info.php" method="post">
+                Year: <input type="text" name="year"> <br/>
+                <input type="submit">
+        </form>
+        <form action="all_year.php" method="post">
+            <input type="submit" value="All_year">
+        </form>
+        <br/><br/>
+
+
+        <!-- (9) -->
+        <h2> View movies based on domestic:international box office production </h2>
+        Enter a movie (case insensitive) to view its domestic to international box office ratio or Click to view the movies with the highest and lowest domestic to international box office numbers
+        <form action="singe_ratio.php" method="post">
+                Movie: <input type="text" name="movie"> <br/>
+                <input type="submit">
+        </form>
+        <form action="all_ratio.php" method="post">
+            <input type="submit" value="All_ratio">
+        </form>
+        <br/><br/>
+
+        <!-- (10) -->
+        <h2> View directors based on box office production </h2>
+        Enter a director's name (case insensitive) to view their total domestic and international box office numbers or click to view the directors with the highest numbers
+        <form action="singe_director.php" method="post">
+                Director: <input type="text" name="director"> <br/>
+                <input type="submit">
+        </form>
+        <form action="all_directors.php" method="post">
+            <input type="submit" value="All_director">
+        </form>
+        <br/><br/>
+
+
+        <!-- Adding -->
+
+        <!-- need to accept multiple inputs -->
+
+
+
+        <h2> Add Movie </h2>
+        Enter information here to add a movie to the database; note that the ID must be unique
+        <form action="insert_movie.php" method="post">
+                ID: <input type="text" name="ID"> <br/>
                 <input type="submit">
         </form>
         <br/><br/>
 
-        <!-- (c) -->
-        <h2> Full Table of Raw Scores</h2>
-        <form action="HW4_ShowAllRawScores.php" method="post">
-                password: <input type="text" name="password"> <br/>
+        <h2> Add Actor </h2>
+        Enter information here to add an actor to the database; note that their ID must be unique
+        <form action="insert_actor.php" method="post">
+                ID: <input type="text" name="ID"> <br/>
                 <input type="submit">
         </form>
         <br/><br/>
 
-        <!-- (d) -->
-        <h2> Full Table of Percentages with Weighted Averages</h2>
-        <form action="HW4_ShowAllCourseAverages.php" method="post">
-                password: <input type="text" name="password"> <br/>
+        <h2> Add a case where an actor is in a movie </h2>
+        Enter information here to add a relationship between an actor and a movie to the database; note that the movie ID and actor's ID must be in the database already
+        <form action="insert_isin.php" method="post">
+                ID: <input type="text" name="ID"> <br/>
                 <input type="submit">
         </form>
+        <br/><br/>
 
+
+
+        <!-- Deleting -->
+        <h2> Delete Movie </h2>
+        Enter information here to delete a movie to the database; note that the ID must exist in the database
+        <form action="delete_movie.php" method="post">
+                ID: <input type="text" name="ID"> <br/>
+                <input type="submit">
+        </form>
+        <br/><br/>
+
+        <h2> Delete Actor </h2>
+        Enter information here to delete an actor to the database; note that their ID must exist in the database
+        <form action="delete_actor.php" method="post">
+                ID: <input type="text" name="ID"> <br/>
+                <input type="submit">
+        </form>
+        <br/><br/>
    </body>
 </html>
 
