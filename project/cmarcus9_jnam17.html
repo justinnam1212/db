@@ -24,8 +24,14 @@
         <h2> Top Domestic and International Box Office Numbers</h2>
         Click the button to display the top 10 domestic and international box office producing movies
         <form action="top_box.php" method="post">
-            <input type="submit" value="Click">
-        </form>
+	     <label for="box">Determine Scope of Box Office:</label>
+	     <select name="box_office" id="bo">
+	       <optgroup label="box_office">
+		 <option value="Domestic">Domestic</option>
+		 <option value="International">International</option>
+		 <input type="submit" value="Submit">
+	     </select>
+	</form>
         <br/><br/>
 
         <!-- (4) -->
