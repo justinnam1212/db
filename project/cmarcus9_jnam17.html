@@ -111,22 +111,48 @@
         Enter information here to add a movie to the database; note that the ID must be unique
         <form action="insert_movie.php" method="post">
                 ID: <input type="text" name="ID"> <br/>
+                Name: <input type="text" name="movie_name"> <br/>
+                Production Year: <input type="number" name="prod_year"> <br/>
+                Production Budget: <input type="number" name="prod_budg"> <br/>
+                Domestic Box Office: <input type="number" name="dom_box"> <br/>
+                International Box Office: <input type="number" name="int_box"> <br/>
+                Rating: <input type="text" name="rating"> <br/>
+                Creative Type: <input type="text" name="ct"> <br/>
+                Movie Source: <input type="text" name="movie_source"> <br/>
+                Production Method: <input type="text" name="prod_method"> <br/>
+                Genre: <input type="text" name="genre"> <br/>
+                Sequel: <input type="number" name="sequel"> <br/>
+                Running Time: <input type="number" name="run_time"> <br/>
+                IsAdult: <input type="number" name="isAdult"> <br/>
+                Genres: <input type="text" name="genres"> <br/>
                 <input type="submit">
         </form>
         <br/><br/>
 
-        <h2> Add Actor </h2>
-        Enter information here to add an actor to the database; note that their ID must be unique
+        <h2> Add Person </h2>
+        Enter information here to add a person to the database; note that their ID must be unique
         <form action="insert_actor.php" method="post">
                 ID: <input type="text" name="ID"> <br/>
+                Name: <input type="text" name="person_name"> <br/>
+                Birth Year: <input type="number" name="birth_year"> <br/>
+                Death Year: <input type="number" name="death_year"> <br/>
+                Primary Profession: <input type="text" name="prim_profession"> <br/>
+                Titles Known For: <input type="text" name="known_for"> <br/>
                 <input type="submit">
         </form>
         <br/><br/>
 
+
+
+        <!-- Find lowest ordering of that movie first -->
         <h2> Add a case where an actor is in a movie </h2>
         Enter information here to add a relationship between an actor and a movie to the database; note that the movie ID and actor's ID must be in the database already
         <form action="insert_isin.php" method="post">
-                ID: <input type="text" name="ID"> <br/>
+                movieID: <input type="text" name="movie_ID"> <br/>
+                personID: <input type="text" name="person_ID"> <br/>
+                Category: <input type="text" name="category"> <br/>
+                Job: <input type="text" name="job"> <br/>
+                Characters: <input type="text" name="characters"> <br/>
                 <input type="submit">
         </form>
         <br/><br/>
