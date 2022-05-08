@@ -1,24 +1,21 @@
 -- movie_rating.sql
 -- displays info for each rated movie
 
-DELIMETER ?
+DELIMITER ?
 
-DROP PROCEDURE IF EXISTS
+DROP PROCEDURE IF EXISTS movie_rating ?
 
-CREATE PROCEDURE movie_rating_info()
+CREATE PROCEDURE movie_rating()
 BEGIN
 
-	SELECT movieID, AVG(international_box_office) AS MeanBoxOffice, AVG(running_time) AS MeanRunTime
+	SELECT rating, AVG(international_box_office) / 1000000 AS MeanBoxOffice, AVG(running_time) AS MeanRunTime
 	FROM Movie
 	GROUP BY rating
-	ORDER BY MeanBoxOffice;
-
-
-
+	ORDER BY MeanBoxOffice DESC;
 
 END; ?
 
-DELIMETER ;
+DELIMITER ;
 
 
 
