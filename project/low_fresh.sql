@@ -12,10 +12,8 @@ BEGIN
 	SELECT DISTINCT movieID, movie_name, tomatometer_rating
        FROM Review
      WHERE tomatometer_status = 'Fresh'
-      ORDER BY tomatometer_rating
-      LIMIT 10;
-
-
+      ORDER BY tomatometer_rating;
+      
 END; ?
 
 DELIMITER ;

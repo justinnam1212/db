@@ -12,8 +12,7 @@ BEGIN
 	SELECT DISTINCT movieID, movie_name, tomatometer_rating
        FROM Review
      WHERE tomatometer_status = 'Rotten'
-      ORDER BY tomatometer_rating DESC
-      LIMIT 10;
+      ORDER BY tomatometer_rating DESC;
 
 
 END; ?
