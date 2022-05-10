@@ -1,0 +1,14 @@
+nm0000085	Henner Hofmann	1950	\N	cinematographer,producer,camera_department	tt0113482,tt1825758,tt0097738,tt0097523
+nm0000093	Brad Pitt	1963	\N	actor,producer,soundtrack	tt1210166,tt0356910,tt0114746,tt2935510
+nm0000095	Woody Allen	1935	\N	writer,director,actor	tt0075686,tt0091167,tt0097123,tt0079522
+nm0000102	Kevin Bacon	1958	\N	actor,producer,soundtrack	tt0327056,tt0361127,tt0164052,tt0087277
+nm0000104	Antonio Banderas	1960	\N	actor,soundtrack,writer	tt0120657,tt0120746,tt0285823,tt1189073
+nm0000113	Sandra Bullock	1964	\N	producer,actress,soundtrack	tt0111257,tt1041829,tt0212346,tt1454468
+nm0000116	James Cameron	1954	\N	writer,producer,director	tt0499549,tt0103064,tt0090605,tt0120338
+nm0000120	Jim Carrey	1962	\N	actor,writer,producer	tt0338013,tt0315327,tt0110475,tt0109040
+nm0000123	George Clooney	1961	\N	actor,producer,director	tt0433383,tt1193138,tt0465538,tt1124035
+nm0000129	Tom Cruise	1962	\N	actor,producer,soundtrack	tt0325710,tt0092099,tt0116695,tt0117060
+nm0000136	Johnny Depp	1963	\N	actor,producer,soundtrack	tt0449088,tt0408236,tt0383574,tt0325980
+nm0000138	Leonardo DiCaprio	1974	\N	actor,producer,soundtrack	tt0407887,tt0993846,tt0120338,tt1375666
+nm0000151	Morgan Freeman	1937	\N	actor,producer,soundtrack	tt1057500,tt0097239,tt0114369,tt0468569
+nm0000173	Nicole Kidman	1967	\N	actress,producer,soundtrack	tt0274558,tt0203009,tt0935075,tt0276919

@@ -1,0 +1,13 @@
+mission: impossible iii	2006	150000000	133501348	264000000	PG-13	Contemporary Fiction	Based on TV	Live Action	Action	1.0	126.0	tt0317919	0.0	Action;Adventure;Thriller
+x-men: the last stand	2006	210000000	234362462	224898484	PG-13	Super Hero	Based on Comic/Graphic Novel	Live Action	Action	1.0	104.0	tt0376994	0.0	Action;Adventure;Sci-Fi
+into the wild	2007	20000000	18354356	38468604	R	Contemporary Fiction	Based on Fiction Book/Short Story	Live Action	Drama	0.0	149.0	tt0758758	0.0	Adventure;Biography;Drama
+the bourne ultimatum	2007	130000000	227471070	216572326	PG-13	Contemporary Fiction	Based on Fiction Book/Short Story	Live Action	Thriller/Suspense	1.0	113.0	tt0440963	0.0	Action;Mystery;Thriller
+ratatouille	2007	150000000	206445654	420104041	G	Kids Fiction	Original Screenplay	Digital Animation	Adventure	0.0	110.0	tt0382932	0.0	Adventure;Animation;Comedy
+transformers	2007	151000000	319246193	389026399	PG-13	Science Fiction	Based on TV	Animation/Live Action	Action	0.0	142.0	tt0418279	0.0	Action;Adventure;Sci-Fi
+kung fu panda	2008	130000000	215434591	416475940	PG	Kids Fiction	Original Screenplay	Digital Animation	Adventure	0.0	91.0	tt0441773	0.0	Action;Adventure;Animation
+the incredible hulk	2008	137500000	134806913	130766946	PG-13	Super Hero	Based on Comic/Graphic Novel	Live Action	Adventure	0.0	112.0	tt0800080	0.0	Action;Adventure;Sci-Fi
+the dark knight	2008	185000000	533720947	468275260	PG-13	Super Hero	Based on Comic/Graphic Novel	Live Action	Action	1.0	152.0	tt0468569	0.0	Action;Crime;Drama
+shi yue wei cheng	2009	23000000	0	44195779		Historical Fiction			Action	0.0	139.0	tt1403130	0.0	Action;Drama;History
+star trek	2009	140000000	257730019	129109595	PG-13	Science Fiction	Based on TV	Live Action	Adventure	1.0	125.0	tt0796366	0.0	Action;Adventure;Sci-Fi
+parental guidance	2012	25000000	77267296	43565087	PG	Contemporary Fiction	Original Screenplay	Live Action	Adventure	0.0	104.0	tt1047540	0.0	Comedy;Family
+the dark knight rises	2012	275000000	448139099	636300000	PG-13	Super Hero	Based on Comic/Graphic Novel	Live Action	Action	1.0	164.0	tt1345836	0.0	Action;Crime;Drama
