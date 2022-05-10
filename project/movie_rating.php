@@ -38,14 +38,19 @@ if (empty($item)) {
 
             //Create table to display results
             echo "<table border=\"1px solid black\">";
-            echo "<tr><th> rating </th> <th> mean box office </th><th> run time (minutes) </th></tr>";
+            echo "<tr><th> rating </th> <th> mean box office </th><th> mean run time (minutes) </th></tr>";
 
             //Report result set by visiting each row in it
 	    $dataPoints = array();
             while ($row = $result->fetch_row()) {
-	    	  array_push($dataPoints, array( "label"=> $row[0], "y"=> $row[1]));
                echo "<tr>";
-               echo "<td>".$row[0]."</td>";
+	      if ($row[0] == "") {
+  	      	 echo "<td>Not Listed</td>";
+		 array_push($dataPoints, array( "label"=> "Not Listed", "y"=> $row[1]));
+       	       } else {
+               	 echo "<td>".$row[0]."</td>";
+		 array_push($dataPoints, array( "label"=> $row[0], "y"=> $row[1]));
+	       }
                echo "<td>".$row[1]."</td>";
                echo "<td>".$row[2]."</td>";
                echo "</tr>";
@@ -88,21 +93,6 @@ if (empty($item)) {
 $conn->close();
 ?>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
