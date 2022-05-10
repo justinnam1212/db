@@ -24,7 +24,7 @@
         <h2> Top International and Domestic Box Office Numbers</h2>
         Input a number to display the top international and domestic box office producing movies
         <form action="top_box.php" method="post">
-	  choose number of movies to display: <input type="text" name="scope">
+	  choose number of movies to display: <input type="number" name="scope">
 	  <input type="submit">
 
 	</form>
@@ -32,11 +32,11 @@
 
         <!-- (4) -->
         <h2> Average Movie Budget for a Given Actor</h2>
-        Enter an actor's name (case insensitive):
+        Click the button to display the average movie budget for each actor in descending order:
         <form action="actor_budget.php" method="post">
-                Actor: <input type="text" name="actor"> <br/>
-                <input type="submit">
+                <input type="submit" value="Click">
         </form>
+        <br/><br/>
 
         <!-- (5) -->
         <h2> Lowest 'Fresh' Rated Movies</h2>
