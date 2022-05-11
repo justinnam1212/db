@@ -57,6 +57,7 @@ END //
 
 DELIMITER ;
 
+DELIMITER //
 
 DROP PROCEDURE IF EXISTS year_prod_age //
 
@@ -188,7 +189,7 @@ DELIMITER //
 
 DROP FUNCTION IF EXISTS next_isin_num //
 
-CREATE FUNCTION next_isin_num(IN movie VARCHAR(20))
+CREATE FUNCTION next_isin_num(movie VARCHAR(20))
 RETURNS INTEGER
 BEGIN
         RETURN (SELECT MAX(ordering) + 1 FROM IsIn WHERE movieID = movie);

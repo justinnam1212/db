@@ -1,0 +1,21 @@
+
+-- HW4_ShowPercentages.sql                                                                                                                                                                                            
+-- Displays a specific student's % and their overall grade                                                                                                                                                            
+
+DELIMITER ?
+
+DROP PROCEDURE IF EXISTS HW4_ShowPercentages ?
+
+CREATE PROCEDURE HW4_ShowPercentages(IN selectedID VARCHAR(4))
+BEGIN
+        IF EXISTS(SELECT * FROM HW4_RawScore WHERE SID = selectedID) THEN
+      SELECT * FROM HW4_Student;
+      CALL HW4_PercentageForExam(selectedID);
+      CALL HW4_CourseWeights(selectedID);
+      ELSE
+        SELECT "ERROR: SID " AS SID;
+-- we will find each score and what it's out of, make a new column of the percentages                                                                                                                                 
+   END IF;
+END; ?
+
+DELIMITER ;

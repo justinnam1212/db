@@ -23,14 +23,19 @@ if (empty($item)) {
 } else {
    echo "Top "; 
    echo $item;
-   echo " Total/International Box Office Performers <br>";
+   echo " performers <br>";
    echo "(values listed in millions of dollars) <br><br>";
 
    //Prepare a statement that we can later execute. The ?'s are placeholders for
    //parameters whose values we will set before we run the query.
    if ($stmt = $conn->prepare("CALL top_box(?)")) {
 
-   $stmt->bind_param("s", $item);
+      //Attach the ? in prepared statements to variables (even if those variables
+      //don't hold the values we want yet).  First parameter is a list of types of
+      //the variables that follow: 's' means string, 'i' means integer, 'd' means
+      //double. E.g., for a statment with 3 ?'s, where middle parameter is an integer
+      //and the other two are strings, the first argument included should be "sis".
+      $stmt->bind_param("s", $item);
 
       //Run the actual query
       if ($stmt->execute()) {
@@ -42,7 +47,7 @@ if (empty($item)) {
 	 
             //Create table to display results
             echo "<table border=\"1px solid black\">";
-            echo "<tr><th> movie </th> <th> international box office </th><th> domestic box office </th></tr>";
+            echo "<tr><th> movie </th> <th> international box office </th><th>  box office </th></tr>";
 
             //Report result set by visiting each row in it
             while ($row = $result->fetch_row()) {
