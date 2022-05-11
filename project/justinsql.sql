@@ -64,7 +64,7 @@ DROP PROCEDURE IF EXISTS year_prod_age //
 CREATE PROCEDURE year_prod_age(IN item year(4))
 BEGIN 
 	WITH ActorsAndMovies AS (
-	SELECT production_year, I.personID, domestic_box_office
+	SELECT production_year, I.personID, domestic_box_office, international_box_office
 	FROM Movie AS M JOIN IsIn AS I on M.movieID = I.movieID
 	WHERE I.job = 'actor')
 	SELECT A.production_year, AVG(domestic_box_office) AS avgDomBox, AVG(international_box_office) AS avgIntBox, (production_year - birthYear) as AverageAge
