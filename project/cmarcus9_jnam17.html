@@ -66,7 +66,7 @@
         <br/><br/>
 
         <!-- (8) -->
-        <h2> Average box office, age of actor, and age difference by year </h2>
+        <h2> Average domestic box office and average age of actor by year </h2>
         Either enter a year or select the second button to view the information for all years
         <form action="year_info.php" method="post">
                 Year: <input type="text" name="year"> <br/>
@@ -92,11 +92,7 @@
 
         <!-- (10) -->
         <h2> View directors based on box office production </h2>
-        Enter a director's name (case insensitive) to view their total domestic and international box office numbers or click to view the directors with the highest numbers
-        <form action="singe_director.php" method="post">
-                Director: <input type="text" name="director"> <br/>
-                <input type="submit">
-        </form>
+        Click to view the directors with the highest total budgets
         <form action="all_directors.php" method="post">
             <input type="submit" value="All_director">
         </form>
@@ -109,25 +105,10 @@
 
 
 
-        <h2> Add Movie </h2>
-        Enter information here to add a movie to the database; note that the ID must be unique
-        <form action="insert_movie.php" method="post">
-                ID: <input type="text" name="ID"> <br/>
-                Name: <input type="text" name="movie_name"> <br/>
-                Production Year: <input type="number" name="prod_year"> <br/>
-                Production Budget: <input type="number" name="prod_budg"> <br/>
-                Domestic Box Office: <input type="number" name="dom_box"> <br/>
-                International Box Office: <input type="number" name="int_box"> <br/>
-                Rating: <input type="text" name="rating"> <br/>
-                Creative Type: <input type="text" name="ct"> <br/>
-                Movie Source: <input type="text" name="movie_source"> <br/>
-                Production Method: <input type="text" name="prod_method"> <br/>
-                Genre: <input type="text" name="genre"> <br/>
-                Sequel: <input type="number" name="sequel"> <br/>
-                Running Time: <input type="number" name="run_time"> <br/>
-                IsAdult: <input type="number" name="isAdult"> <br/>
-                Genres: <input type="text" name="genres"> <br/>
-                <input type="submit">
+        <h2> All Movies </h2>
+        Click here to see all movies we have record of currently
+        <form action="all_movies.php" method="post">
+            <input type="submit" value="all_movies">
         </form>
         <br/><br/>
 
