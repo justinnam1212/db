@@ -1,4 +1,4 @@
-<head><title>PHP PreparedStatement example</title></head>
+<head><title>Displaying the Best Movies</title></head>
 <body>
 
 <?php
@@ -15,11 +15,11 @@ if (empty($item)) {
    echo "empty <br><br>";
 
 } else {
-  echo "<h2>Movie Rating Info</h2>";
+  echo "<h2>Best Rated Movies</h2>";
 
    //Prepare a statement that we can later execute. The ?'s are placeholders for
    //parameters whose values we will set before we run the query.
-   if ($stmt = $conn->prepare("CALL movie_rating()")) {
+   if ($stmt = $conn->prepare("CALL desc_tomato()")) {
 
       //Attach the ? in prepared statements to variables (even if those variables
       //don't hold the values we want yet).  First parameter is a list of types of
@@ -38,30 +38,27 @@ if (empty($item)) {
 
             //Create table to display results
             echo "<table border=\"1px solid black\">";
-            echo "<tr><th> rating </th> <th> mean box office </th><th> mean run time (minutes) </th></tr>";
+            echo "<tr><th> movieID </th><th> movie name </th><th> tomatometer rating (out of 100) </th></tr>";
 
             //Report result set by visiting each row in it
-	    $dataPoints = array();
+            $dataPoints = array();
             while ($row = $result->fetch_row()) {
                echo "<tr>";
-	      if ($row[0] == "") {
-  	      	 echo "<td>Not Listed</td>";
-		 array_push($dataPoints, array( "label"=> "Not Listed", "y"=> $row[1]));
-       	       } else {
-               	 echo "<td>".$row[0]."</td>";
-		 array_push($dataPoints, array( "label"=> $row[0], "y"=> $row[1]));
-	       }
+              
+                 echo "<td>".$row[0]."</td>";
+                 array_push($dataPoints, array( "label"=> $row[1], "y"=> $row[2]));
                echo "<td>".$row[1]."</td>";
-               echo "<td>".$row[2]."</td>";
+	       echo "<td>".$row[2]."</td>";
                echo "</tr>";
 
             }
 
 
+
             echo "</table>";
 
          }      else {
-            echo "No bids found for the specified item";
+            echo "Not found";
 
                  }
 
@@ -72,7 +69,7 @@ if (empty($item)) {
 
          //Call to execute failed, e.g. because server is no longer reachable,
          //or because supplied values are of the wrong type
-         echo "Execute failed.<br> Try entering a number <br>";
+         echo "Execute failed.<br>";
       }
 
       //Close down the prepared statement
@@ -86,8 +83,10 @@ if (empty($item)) {
       $error = $conn->errno . ' ' . $conn->error;
       echo $error;
    }
-
 }
+
+
+
 
 //Close the connection created in open.php
 $conn->close();
@@ -105,7 +104,7 @@ window.onload = function () {
                 exportEnabled: true,
                 theme: "light1", // "light1", "light2", "dark1", "dark2"
                 title:{
-                        text: "Mean International Box Office (Millions of Dollars) for Different Movie Ratings"
+                        text: "Best Movies"
                 },
                 data: [{
                         type: "bar", //change type to column, bar, line, area, pie, etc
@@ -118,6 +117,6 @@ window.onload = function () {
 </head>
 <body>
         <div id="chartContainer" style="height: 400px; width: 100%;"></div>
-        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 </html>

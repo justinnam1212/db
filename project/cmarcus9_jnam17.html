@@ -24,7 +24,7 @@
         <h2> Top International and Domestic Box Office Numbers</h2>
         Input a number to display the top international and domestic box office producing movies
         <form action="top_box.php" method="post">
-	  choose number of movies to display: <input type="number" name="scope">
+	  choose number of movies to display: <input type="number" min="0" name="scope">
 	  <input type="submit">
 
 	</form>
@@ -40,7 +40,7 @@
 
         <!-- (5) -->
         <h2> Lowest 'Fresh' Rated Movies</h2>
-        Click the button to display the lowest 10 'Fresh' rated movies
+        Click the button to display the worst 'Fresh' rated movies
         <form action="low_fresh.php" method="post">
             <input type="submit" value="Click">
         </form>
@@ -48,20 +48,20 @@
 
         <!-- (6) -->
         <h2> Best 'Rotten' Rated Movies</h2>
-        Click the button to display the highest 10 'Rotten' rated movies
+        Click the button to display the best 'Rotten' rated movies
         <form action="high_rot.php" method="post">
-            <input type="submit" value="Click">
-        </form>
+	  <input type="submit" value="Click">
+	</form>
         <br/><br/>
 
         <!-- (7) -->
         <h2> Worst and Best Movies by Tomatometer </h2>
         Click either to view either the best or worst movies by Tomatometer score
         <form action="desc_tomato.php" method="post">
-            <input type="submit" value="Worst">
+            <input type="submit" value="Best">
         </form>
         <form action="asc_tomato.php" method="post">
-            <input type="submit" value="Best">
+            <input type="submit" value="Worst">
         </form>
         <br/><br/>
 
@@ -81,7 +81,7 @@
         <!-- (9) -->
         <h2> View movies based on domestic:international box office production </h2>
         Enter a movie (case insensitive) to view its domestic to international box office ratio or Click to view the movies with the highest and lowest domestic to international box office numbers
-        <form action="singe_ratio.php" method="post">
+        <form action="single_ratio.php" method="post">
                 Movie: <input type="text" name="movie"> <br/>
                 <input type="submit">
         </form>
@@ -93,11 +93,25 @@
         <!-- (10) -->
         <h2> View directors based on box office production </h2>
         Click to view the directors with the highest total budgets
+
         <form action="all_directors.php" method="post">
             <input type="submit" value="All_director">
         </form>
         <br/><br/>
 
+	<!-- (11) -->
+        <h2>Fresh or Rotten Movies by Year</h2>
+	<form action="fresh_rotten_by_year.php" method ="post">
+	  <label for="forr">Choose fresh or rotten:</label>
+	  <select name="forr" id="forr">
+	    <optgroup label="options">
+	      <option value="Fresh">Fresh</option>
+	      <option value="Rotten">Rotten</option>
+	    </optgroup>
+	  </select>
+	<input type="submit" value="Submit">
+	</form>
+        <br/><br/>
 
         <!-- Adding -->
 

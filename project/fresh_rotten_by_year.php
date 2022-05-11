@@ -9,24 +9,33 @@ include 'open.php';
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', true);
 
-$item = "hi";
+//Collect the posted value in a variable called $item
+$item = $_POST['forr'];
+
+echo "<h2>Top Box Office Movies</h2>";
+
+
 //Determine if any input was actually collected
 if (empty($item)) {
    echo "empty <br><br>";
 
 } else {
-  echo "<h2>Movie Rating Info</h2>";
+
+  echo "Number of "; 
+   echo $item;
+   echo " Movies Every Year <br><br>";
+
 
    //Prepare a statement that we can later execute. The ?'s are placeholders for
    //parameters whose values we will set before we run the query.
-   if ($stmt = $conn->prepare("CALL movie_rating()")) {
+   if ($stmt = $conn->prepare("CALL fresh_rotten_by_year(?)")) {
 
       //Attach the ? in prepared statements to variables (even if those variables
       //don't hold the values we want yet).  First parameter is a list of types of
       //the variables that follow: 's' means string, 'i' means integer, 'd' means
       //double. E.g., for a statment with 3 ?'s, where middle parameter is an integer
       //and the other two are strings, the first argument included should be "sis".
-      //$stmt->bind_param();
+      $stmt->bind_param("s", $item);
 
       //Run the actual query
       if ($stmt->execute()) {
@@ -35,43 +44,36 @@ if (empty($item)) {
          $result = $stmt->get_result();
 
          if (($result) && ($result->num_rows != 0)) {
-
+	 
             //Create table to display results
             echo "<table border=\"1px solid black\">";
-            echo "<tr><th> rating </th> <th> mean box office </th><th> mean run time (minutes) </th></tr>";
+            echo "<tr><th> Year </th> <th> $item Movies that Year </th></tr>";
 
-            //Report result set by visiting each row in it
 	    $dataPoints = array();
+            //Report result set by visiting each row in it
             while ($row = $result->fetch_row()) {
                echo "<tr>";
-	      if ($row[0] == "") {
-  	      	 echo "<td>Not Listed</td>";
-		 array_push($dataPoints, array( "label"=> "Not Listed", "y"=> $row[1]));
-       	       } else {
-               	 echo "<td>".$row[0]."</td>";
-		 array_push($dataPoints, array( "label"=> $row[0], "y"=> $row[1]));
-	       }
+	       array_push($dataPoints, array( "label"=> $row[0], "y"=> $row[1]));
+               echo "<td>".$row[0]."</td>";
                echo "<td>".$row[1]."</td>";
-               echo "<td>".$row[2]."</td>";
-               echo "</tr>";
-
-            }
-
-
+	       echo "</tr>";
+            } 
+         
+	 
             echo "</table>";
+            
+         }	else {
+            echo "Does not exist";
 
-         }      else {
-            echo "No bids found for the specified item";
-
-                 }
+		 }
 
          //We are done with the result set returned above, so free it
          $result->free_result();
-
+      
       } else {
 
          //Call to execute failed, e.g. because server is no longer reachable,
-         //or because supplied values are of the wrong type
+	 //or because supplied values are of the wrong type
          echo "Execute failed.<br> Try entering a number <br>";
       }
 
@@ -84,7 +86,7 @@ if (empty($item)) {
        //and misspelled attribute names in the statement string.
       echo "Prepare failed.<br>";
       $error = $conn->errno . ' ' . $conn->error;
-      echo $error;
+      echo $error; 
    }
 
 }
@@ -93,6 +95,9 @@ if (empty($item)) {
 $conn->close();
 ?>
 </body>
+
+
+
 
 
 
@@ -105,10 +110,10 @@ window.onload = function () {
                 exportEnabled: true,
                 theme: "light1", // "light1", "light2", "dark1", "dark2"
                 title:{
-                        text: "Mean International Box Office (Millions of Dollars) for Different Movie Ratings"
+                        text: "By Year"
                 },
                 data: [{
-                        type: "bar", //change type to column, bar, line, area, pie, etc
+                        type: "line", //change type to column, bar, line, area, pie, etc
                         dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
                 }]
         });

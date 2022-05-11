@@ -1,17 +1,16 @@
--- low_fresh.sql
+-- asc_tomato.sql
 -- displays info for each rated movie
 
 DELIMITER ?
 
-DROP PROCEDURE IF EXISTS low_fresh ?
+DROP PROCEDURE IF EXISTS asc_tomato ?
 
-CREATE PROCEDURE low_fresh()
+CREATE PROCEDURE asc_tomato()
 BEGIN
 
 
 	SELECT DISTINCT movieID, movie_name, tomatometer_rating
        FROM Review
-     WHERE tomatometer_status = 'Fresh'
       ORDER BY tomatometer_rating;
       
 END; ?

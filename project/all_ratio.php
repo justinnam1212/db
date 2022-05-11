@@ -10,7 +10,7 @@
         $result = $conn->store_result();
         if ($result) {
        	    echo "<table border=\"2px solid black\">";
-           echo "<tr><td> movie </td><td> ratio </td?></tr>";
+           echo "<tr><td> movie </td><td> % box office domestic </td?></tr>";
 	   echo "<br>highest ratios<br>";
            foreach ($result as $row){
                 echo "<tr>";
