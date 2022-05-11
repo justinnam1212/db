@@ -44,7 +44,7 @@ if (empty($item)) {
 
             //Create table to display results
             echo "<table border=\"1px solid black\">";
-            echo "<tr><th> movie </th> <th> box office ratio </th></tr>";
+            echo "<tr><th> movie </th> <th> % box office domestic </th></tr>";
 
 	    $dataPoints = array();
             //Report result set by visiting each row in it
@@ -57,7 +57,7 @@ if (empty($item)) {
 
            }
 	   array_push($dataPoints, array( "label"=> "% domestic", "y"=> $domestic));
-	   array_push($dataPoints, array( "label" => "% international minus domestic","y" => 100-$domestic));
+	   array_push($dataPoints, array( "label" => "% international","y" => 100-$domestic));
 
 
             echo "</table>";
@@ -95,24 +95,6 @@ if (empty($item)) {
 $conn->close();
 ?>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
