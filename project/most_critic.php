@@ -1,3 +1,5 @@
+<head><title>PHP PreparedStatement example</title></head>
+<body>
 
 <?php
 include 'open.php';
@@ -18,9 +20,11 @@ if (empty($item)) {
    echo "empty <br><br>";
 
 } else {
-   echo "Writers who wrote the most for "
-   echo $item 
-   echo "<br><br>";
+
+  echo "Number of "; 
+   echo $item;
+   echo " Movies Every Year <br><br>";
+
 
    //Prepare a statement that we can later execute. The ?'s are placeholders for
    //parameters whose values we will set before we run the query.
@@ -42,18 +46,14 @@ if (empty($item)) {
          if (($result) && ($result->num_rows != 0)) {
 	 
             //Create table to display results
-
-            $dataPoints = array();
-            foreach($result as $row) {
-               array_push($dataPoints, array( "label"=> $row[0], "y"=> $row[1]);
-            }
-
             echo "<table border=\"1px solid black\">";
-            echo "<tr><th> Critic Name </th> <th> Number of Reviews </th>";
+            echo "<tr><th> Critic Name </th> <th> Number of Reviews </th></tr>";
 
+	    $dataPoints = array();
             //Report result set by visiting each row in it
             while ($row = $result->fetch_row()) {
                echo "<tr>";
+	       array_push($dataPoints, array( "label"=> $row[0], "y"=> $row[1]));
                echo "<td>".$row[0]."</td>";
                echo "<td>".$row[1]."</td>";
 	       echo "</tr>";
@@ -63,7 +63,7 @@ if (empty($item)) {
             echo "</table>";
             
          }	else {
-            echo "No Reviews found under this publisher";
+            echo "No reviews found under this publisher";
 
 		 }
 
@@ -74,7 +74,7 @@ if (empty($item)) {
 
          //Call to execute failed, e.g. because server is no longer reachable,
 	 //or because supplied values are of the wrong type
-         echo "Execute failed.<br> ";
+         echo "Execute failed.<br> Try entering a number <br>";
       }
 
       //Close down the prepared statement
@@ -97,6 +97,10 @@ $conn->close();
 </body>
 
 
+
+
+
+
 <html>
 <head>
 <script>
@@ -109,7 +113,7 @@ window.onload = function () {
                         text: "Most Written Critic for Publisher"
                 },
                 data: [{
-                        type: "bar", //change type to column, bar, line, area, pie, etc
+                        type: "column", //change type to column, bar, line, area, pie, etc
                         dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
                 }]
         });
