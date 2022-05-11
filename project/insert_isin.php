@@ -19,7 +19,7 @@
                 echo "ERROR: ID already used for a movie<br><br>";
             }
             else {
-                if ($stmt = $conn->prepare("CALL insertIsIn(?, ?, ?, ?, ?")) {
+                if ($stmt = $conn->prepare("CALL insertIsIn(?, ?, ?, ?, ?)")) {
                 $stmt->bind_param("sssss", [$mid, $pid, $cat, $job, $char]);
                 $stmt->execute();
                 }

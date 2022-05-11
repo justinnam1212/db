@@ -15,7 +15,7 @@
            echo "ERROR: ID already used for a person<br><br>";
            }
          else {
-         	if ($stmt = $conn->prepare("CALL insertPerson(?, ?, ?, ?, ?, ?")) {
+         	if ($stmt = $conn->prepare("CALL insertPerson(?, ?, ?, ?, ?, ?)")) {
          		$stmt->bind_param("ssiiss", [$id, $name, $byear, $dyear, $pp, $kft]);
          		$stmt->execute();
          	}
