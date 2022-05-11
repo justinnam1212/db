@@ -9,15 +9,9 @@
 	$pp = $_POST['prim_profession'];
 	$kft = $_POST['known_for'];
 
-	<input type="text" name=""> <br/>
-                Birth Year: <input type="number" name="birth_year"> <br/>
-                Death Year: <input type="number" name="death_year"> <br/>
-                Primary Profession: <input type="text" name="prim_profession"> <br/>
-                Titles Known For: <input type="text" name="known_for"> <br/>
-
     if (!empty($id)) {
         if($resultsPass = $conn->query("SELECT IsPerson('".$id."');")) {
-         if($resultsPass->fetch_assoc()["IsPerson('".$pass."')"] > 0) {
+         if($resultsPass->fetch_assoc()["IsPerson('".$pid."')"] > 0) {
            echo "ERROR: ID already used for a person<br><br>";
            }
          else {
